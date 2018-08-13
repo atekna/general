@@ -1,0 +1,234 @@
+
+CREATE TABLE STUDENT (
+StudentID NUMBER (10) CONSTRAINT StudentPK PRIMARY KEY,
+FirstName VARCHAR2 (20 CHAR) NOT NULL,
+LastName VARCHAR2 (20 CHAR) NOT NULL,
+MI CHAR (1 CHAR) NOT NULL,
+Address VARCHAR2 (20 CHAR) NOT NULL,
+City VARCHAR2 (20 CHAR) NOT NULL,
+State CHAR(2 CHAR) NOT NULL,
+Zip VARCHAR2 (10 CHAR) NOT NULL,
+HomePhone VARCHAR2 (10 CHAR) NOT NULL,
+WorkPhone VARCHAR2 (10 CHAR) NOT NULL,
+Email VARCHAR2 (20 CHAR) NOT NULL
+);
+
+
+CREATE TABLE FACULTY (
+FacultyID NUMBER (10) CONSTRAINT FacultyPK PRIMARY KEY,
+FirstName VARCHAR2 (20 CHAR) NOT NULL,
+LastName VARCHAR2 (20 CHAR) NOT NULL,
+MI CHAR (1 CHAR) NOT NULL,
+WorkPhone VARCHAR2 (10 CHAR) NOT NULL,
+CellPhone VARCHAR2 (10 CHAR) NOT NULL,
+Speciality VARCHAR2 (20 CHAR) NOT NULL
+);
+
+
+CREATE TABLE COURSE (
+CourseID NUMBER (10) CONSTRAINT CoursePK PRIMARY KEY,
+CourseName VARCHAR2(20 CHAR) NOT NULL,
+Description VARCHAR2 (20 CHAR) NOT NULL,
+CreditHours NUMBER (4) NOT NULL
+);
+
+
+CREATE TABLE SECTION (
+SectionID NUMBER (10) CONSTRAINT SectionPK PRIMARY KEY,
+CourseID NUMBER (10),
+CONSTRAINT FK_CourseID FOREIGN KEY (CourseID) REFERENCES COURSE (CourseID),
+SectionNumber VARCHAR2 (10 CHAR) NOT NULL,
+SeatsAvailable NUMBER (3) NOT NULL
+);
+
+
+
+
+
+
+
+
+CREATE SEQUENCE StudentID_SEQ
+START WITH 1000
+INCREMENT BY 1;
+
+
+INSERT INTO STUDENT VALUES (
+  StudentID_SEQ.nextval, 'Tim','Hall','P','32 Forest Drive','Dry Fields','OK','65178','3248976502','8546953215','Yokd@yohho.com');
+  
+INSERT INTO STUDENT VALUES (
+  StudentID_SEQ.nextval, 'Wassa','Hagen','S','989 Windsor','Honolulu','HI','96814','5147862584','8258628713','Hagen97@student.vv');
+  
+INSERT INTO STUDENT VALUES (
+  StudentID_SEQ.nextval, 'Fabia','Abrahamsson','D','3615 Crest View','Detroit','MI','15477','5486621542','9593721006','Serinity@hatmail.com');
+  
+INSERT INTO STUDENT VALUES (
+  StudentID_SEQ.nextval, 'Beitris','Siekert','M','100 Druiry Rd','Jupiter','FL','33478','8845023648','5156166122','Grailjju@yohho.com');
+
+INSERT INTO STUDENT VALUES (
+  StudentID_SEQ.nextval, 'Venkata','Fineley','A','Laser Hills','Stoney River','AK','99557','5582102513','6952659123','Venkata_f@yohho.com');
+
+INSERT INTO STUDENT VALUES (
+  StudentID_SEQ.nextval, 'Joel','Prescott','T','16 Oak Castle','Manchester','MO','63011','2540039546','7153796856','JoelPt@woldmail.x');
+
+INSERT INTO STUDENT VALUES (
+  StudentID_SEQ.nextval, 'Ozzy','Brankovic','O','9000 Cortica Blvd','Medford','OR','97501','6253989612','2156218851','Czy90@varietymail.co');
+
+INSERT INTO STUDENT VALUES (
+  StudentID_SEQ.nextval, 'Teodora','Damyanov','M','5309 Sixth Avenue','Richmond','VA','23219','3025176459','2253174847','Damyaov@ar.net');
+
+INSERT INTO STUDENT VALUES (
+  StudentID_SEQ.nextval, 'Dorina','Crespi','A','13 East Main','Portland','PA','15154','2543230117','6544562135','MsDorina@gmail.com');
+
+INSERT INTO STUDENT VALUES (
+  StudentID_SEQ.nextval, 'Ismail','Jordan','G','601 Silver Springs','Eau Claire','WI','54701','9836156823','5142591151','AirIsma@hatmail.com');  
+
+
+
+  
+  
+  
+CREATE SEQUENCE FacultyID_SEQ
+START WITH 1000
+INCREMENT BY 1;
+
+
+INSERT INTO FACULTY VALUES (
+  FacultyID_SEQ.nextval, 'Charles','Jorgensen','M','5469455323','5862294906','ADV ROBOTICS');
+  
+INSERT INTO FACULTY VALUES (
+  FacultyID_SEQ.nextval, 'Billy','Foster','G','3852219432','8768421503','ETHICAL POLITICS');
+  
+INSERT INTO FACULTY VALUES (
+  FacultyID_SEQ.nextval, 'Regina','Hobbs','M','9561329785','1085676921','CALCULUS');
+  
+INSERT INTO FACULTY VALUES (
+  FacultyID_SEQ.nextval, 'Marie','Crigler','J','5482366345','1508335409','HIST THRU A LENS');
+  
+INSERT INTO FACULTY VALUES (
+  FacultyID_SEQ.nextval, 'Alice','Greenfield','A','2576145452','2216579152','JOURNALISM');
+  
+INSERT INTO FACULTY VALUES (
+  FacultyID_SEQ.nextval, 'Roberto','Allen','F','2032256718','4584325425','ARCITECTURE');
+  
+INSERT INTO FACULTY VALUES (
+  FacultyID_SEQ.nextval, 'Pamela','Reisinger','H','5485262703','5481236521','WATER BREATHING');
+  
+INSERT INTO FACULTY VALUES (
+  FacultyID_SEQ.nextval, 'Donald','Bezl','B','8798234709','7249288637','POLITICAL NONSCIENCE');
+  
+INSERT INTO FACULTY VALUES (
+  FacultyID_SEQ.nextval, 'Juana','Bain','A','1546116083','1382664561','SPORTS MEDICINE');
+  
+INSERT INTO FACULTY VALUES (
+  FacultyID_SEQ.nextval, 'Marko','Queshire','B','2548302075','3465119424','WORMHOLES');
+  
+
+
+
+
+  
+
+CREATE SEQUENCE CourseID_SEQ
+START WITH 0100
+INCREMENT BY 1;
+
+
+
+
+INSERT INTO COURSE VALUES (
+  CourseID_SEQ.nextval, 'Survey','Catalog Offerings',0002);
+
+INSERT INTO COURSE VALUES (
+  CourseID_SEQ.nextval, 'Indoctrination','The Truth Actually',0003);
+
+INSERT INTO COURSE VALUES (
+  CourseID_SEQ.nextval, 'Beyond Earth','Beyond the Stars',0002);
+
+INSERT INTO COURSE VALUES (
+  CourseID_SEQ.nextval, 'Flat Worlds','Reality of Planets',0003);
+
+INSERT INTO COURSE VALUES (
+  CourseID_SEQ.nextval, 'Global Cooling','Study of the Icecaps',0003);
+
+INSERT INTO COURSE VALUES (
+  CourseID_SEQ.nextval, 'Typing 101','Reviving Old Techn',0004);
+  
+INSERT INTO COURSE VALUES (
+  CourseID_SEQ.nextval, 'Glass Structures','Prereq Gold Pyramids',0002);
+
+INSERT INTO COURSE VALUES (
+  CourseID_SEQ.nextval, 'Deflecting','Avoid Answering',0003);
+  
+INSERT INTO COURSE VALUES (
+  CourseID_SEQ.nextval, 'Wetlands','Water Mitigation',0001);
+  
+INSERT INTO COURSE VALUES (
+  CourseID_SEQ.nextval, 'History','Biased Perspectives',0004);
+
+
+
+  
+  
+  
+
+CREATE SEQUENCE SectionID_SEQ
+START WITH 0002
+INCREMENT BY 10; 
+
+
+INSERT INTO SECTION
+  (SectionID, CourseID,SectionNumber,SeatsAvailable) 
+VALUES 
+  (SectionID_SEQ.nextval, 100, '0215', 6);
+  
+INSERT INTO SECTION
+  (SectionID, CourseID,SectionNumber,SeatsAvailable) 
+VALUES 
+  (SectionID_SEQ.nextval, 102, '4767', 12);
+  
+INSERT INTO SECTION
+  (SectionID, CourseID,SectionNumber,SeatsAvailable) 
+VALUES 
+  (SectionID_SEQ.nextval, 103, '3212', 4);
+  
+INSERT INTO SECTION
+  (SectionID, CourseID,SectionNumber,SeatsAvailable) 
+VALUES 
+  (SectionID_SEQ.nextval, 120, '77', 1);
+  
+INSERT INTO SECTION
+  (SectionID, CourseID,SectionNumber,SeatsAvailable) 
+VALUES 
+  (SectionID_SEQ.nextval, 105, '831019', 7);
+  
+INSERT INTO SECTION
+  (SectionID, CourseID,SectionNumber,SeatsAvailable) 
+VALUES 
+  (SectionID_SEQ.nextval, 107, '662', 12);
+  
+INSERT INTO SECTION
+  (SectionID, CourseID,SectionNumber,SeatsAvailable) 
+VALUES 
+  (SectionID_SEQ.nextval, 121, '1536', 11);
+  
+INSERT INTO SECTION
+  (SectionID, CourseID,SectionNumber,SeatsAvailable) 
+VALUES 
+  (SectionID_SEQ.nextval, 111, '190', 22);
+  
+INSERT INTO SECTION
+  (SectionID, CourseID,SectionNumber,SeatsAvailable) 
+VALUES 
+  (SectionID_SEQ.nextval, 113, '39953', 9);
+  
+INSERT INTO SECTION
+  (SectionID, CourseID,SectionNumber,SeatsAvailable) 
+VALUES 
+  (SectionID_SEQ.nextval, 109, '804', 17);
+    
+  
+
+
+
+

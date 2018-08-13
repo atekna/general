@@ -1,0 +1,73 @@
+
+CREATE TABLE students (
+StudentID NUMBER(2) CONSTRAINT StudentPK PRIMARY KEY,
+FirstName VARCHAR2 (20 CHAR) NOT NULL,
+LastName VARCHAR2 (20 CHAR) NOT NULL,
+HomePhone VARCHAR2 (12 CHAR) NOT NULL,
+Email VARCHAR2 (25 CHAR) NOT NULL
+);
+
+
+INSERT INTO students (
+  StudentID, FirstName,LastName,HomePhone,Email
+) VALUES (
+  001, 'Frank','Moore','627-921-6695','fmor@mail.com'
+);
+INSERT INTO students (
+  StudentID, FirstName,LastName,HomePhone,Email
+) VALUES (
+  002, 'Noel','Onglotz','854-631-3218','gr66_u2@ksu.stud.org'
+);
+INSERT INTO students (
+  StudentID, FirstName,LastName,HomePhone,Email
+) VALUES (
+  003, 'Janelle','Miller','678-953-6363','star119@hatmail.com'
+);
+INSERT INTO students (
+  StudentID, FirstName,LastName,HomePhone,Email
+) VALUES (
+  004, 'Hiroyuki','Nobunaga','587-616-4491','omegahr99@student.vou.edu'
+);
+INSERT INTO students (
+  StudentID, FirstName,LastName,HomePhone,Email
+) VALUES (
+  005, 'Feng','Wei','310-385-5861','wei2go@hatmail.com'
+);
+INSERT INTO students (
+  StudentID, FirstName,LastName,HomePhone,Email
+) VALUES (
+  006, 'Roman','Lobunotzka','190-259-2016','zlsailer5@mail.com'
+);
+INSERT INTO students (
+  StudentID, FirstName,LastName,HomePhone,Email
+) VALUES (
+  007, 'Daryl','Gostf','830-491-7210','racer77@mail.com'
+);
+INSERT INTO students (
+  StudentID, FirstName,LastName,HomePhone,Email
+) VALUES (
+  008, 'Amr','Asbad','274-529-8706','amrrr2009@yuwin.mail'
+);
+INSERT INTO students (
+  StudentID, FirstName,LastName,HomePhone,Email
+) VALUES (
+  009, 'Antonia','Shareigh','522-988-6037','flowerExpress@flower.info'
+);
+INSERT INTO students (
+  StudentID, FirstName,LastName,HomePhone,Email
+) VALUES (
+  010, 'Ester','Pomelo','431-299-8401','esterP@ksu.stud.org'
+);
+
+
+
+
+SELECT StudentID AS "ID Number", 
+FirstName || ' '|| LastName AS "Student Name", 
+Email AS "Email Address"
+FROM students
+WHERE StudentID < 010
+ORDER BY StudentID;
+
+
+

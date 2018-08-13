@@ -1,0 +1,220 @@
+
+CREATE TABLE CUSTOMER (
+CustomerID NUMBER CONSTRAINT CustomerPK PRIMARY KEY,
+FirstName VARCHAR2 (48 CHAR) NOT NULL,
+LastName VARCHAR2 (48 CHAR) NOT NULL,
+StreetAddress VARCHAR2 (120 CHAR) NOT NULL,
+City VARCHAR2 (48 CHAR) NOT NULL,
+State VARCHAR2 (2 CHAR) NOT NULL,
+Zip NUMBER (5) NOT NULL
+);
+
+
+CREATE TABLE "ORDER LINE"(
+OrderID NUMBER CONSTRAINT OrderPK PRIMARY KEY,
+CustomerID NUMBER NOT NULL,
+CONSTRAINT FK_Customer FOREIGN KEY (CustomerID) REFERENCES CUSTOMER (CustomerID)
+ON DELETE CASCADE,
+ItemNumber NUMBER UNIQUE,
+Price NUMBER NOT NULL
+);
+
+
+
+INSERT INTO CUSTOMER (
+  CustomerID,FirstName,LastName,StreetAddress,City,State,Zip
+) VALUES (
+  001, 'Diego','Maradona','Seat 4366','Stadium City','NY',86753
+);
+INSERT INTO CUSTOMER (
+  CustomerID,FirstName,LastName,StreetAddress,City,State,Zip
+) VALUES (
+  002, 'Mary','Stone','84 Shady Lane','Seattle','WA',59631
+);
+INSERT INTO CUSTOMER (
+  CustomerID,FirstName,LastName,StreetAddress,City,State,Zip
+) VALUES (
+  003, 'Frank','Hydra','500 Longview','Miami','FL',54862
+);
+INSERT INTO CUSTOMER (
+  CustomerID,FirstName,LastName,StreetAddress,City,State,Zip
+) VALUES (
+  004, 'Pippi','Oliver','2100 High Ridge Rd.','Columbus','OH',80017
+);
+INSERT INTO CUSTOMER (
+  CustomerID,FirstName,LastName,StreetAddress,City,State,Zip
+) VALUES (
+  005, 'Tornado','Zen','Newman Falls, Building A','San Antonio','TX',46472
+);
+INSERT INTO CUSTOMER (
+  CustomerID,FirstName,LastName,StreetAddress,City,State,Zip
+) VALUES (
+  006, 'Fsoolb','Karsnokki','Fall Palace','Nowhere','ZQ',40034
+);
+INSERT INTO CUSTOMER (
+  CustomerID,FirstName,LastName,StreetAddress,City,State,Zip
+) VALUES (
+  007, 'Antonio','Winter','74 Ladybug Hill','Sandlake','MI',87028
+);
+INSERT INTO CUSTOMER (
+  CustomerID,FirstName,LastName,StreetAddress,City,State,Zip
+) VALUES (
+  008, 'Vernon','Llog','672 Blue Rd.','San Pomelo','CA',15341
+);
+INSERT INTO CUSTOMER (
+  CustomerID,FirstName,LastName,StreetAddress,City,State,Zip
+) VALUES (
+  009, 'Wolf','Henderson','199 Broad','Black Rock','MI',62524
+);
+INSERT INTO CUSTOMER (
+  CustomerID,FirstName,LastName,StreetAddress,City,State,Zip
+) VALUES (
+  010, 'Leonardo','Pastora','7 Green Gardens','Bostonia','MA',22961
+);
+
+
+
+
+
+INSERT INTO "ORDER LINE" (
+  OrderID,CustomerID,ItemNumber,Price
+) VALUES (
+  9000, 001,55,732
+);
+INSERT INTO "ORDER LINE" (
+  OrderID,CustomerID,ItemNumber,Price
+) VALUES (
+  9017, 002,86,800
+);
+INSERT INTO "ORDER LINE" (
+  OrderID,CustomerID,ItemNumber,Price
+) VALUES (
+  9019, 003,322,199
+);
+INSERT INTO "ORDER LINE" (
+  OrderID,CustomerID,ItemNumber,Price
+) VALUES (
+  9032, 004,14,540
+);
+INSERT INTO "ORDER LINE" (
+  OrderID,CustomerID,ItemNumber,Price
+) VALUES (
+  9047, 005,39,636
+);
+INSERT INTO "ORDER LINE" (
+  OrderID,CustomerID,ItemNumber,Price
+) VALUES (
+  9051, 006,115,729
+);
+INSERT INTO "ORDER LINE" (
+  OrderID,CustomerID,ItemNumber,Price
+) VALUES (
+  9076, 007,127,400
+);
+INSERT INTO "ORDER LINE" (
+  OrderID,CustomerID,ItemNumber,Price
+) VALUES (
+  9084, 008,232,653
+);
+INSERT INTO "ORDER LINE" (
+  OrderID,CustomerID,ItemNumber,Price
+) VALUES (
+  9089, 009,91,28
+);
+INSERT INTO "ORDER LINE" (
+  OrderID,CustomerID,ItemNumber,Price
+) VALUES (
+  9097, 010,304,712
+);
+
+
+
+
+
+SELECT FirstName ||' ' || LastName AS "Customer Name",
+StreetAddress ||' ' || City || ' ' || State AS "Address",
+ItemNumber AS "Item",
+Price AS "Order Cost"
+FROM CUSTOMER INNER JOIN "ORDER LINE"
+ON CUSTOMER.CustomerID = "ORDER LINE".CustomerID; 
+
+
+
+
+
+ALTER TABLE "ORDER LINE"
+	ADD Qty_Ordered NUMBER;
+
+UPDATE "ORDER LINE"
+SET Qty_Ordered  = 2
+WHERE CustomerID = 001;
+
+UPDATE "ORDER LINE"
+SET Qty_Ordered  = 3
+WHERE CustomerID = 002;
+
+UPDATE "ORDER LINE"
+SET Qty_Ordered  = 6
+WHERE CustomerID = 003;
+
+UPDATE "ORDER LINE"
+SET Qty_Ordered  = 1
+WHERE CustomerID = 004;
+
+UPDATE "ORDER LINE"
+SET Qty_Ordered  = 2
+WHERE CustomerID = 005;
+
+UPDATE "ORDER LINE"
+SET Qty_Ordered  = 3
+WHERE CustomerID = 006;
+
+UPDATE "ORDER LINE"
+SET Qty_Ordered  = 1
+WHERE CustomerID = 007;
+
+UPDATE "ORDER LINE"
+SET Qty_Ordered  = 8
+WHERE CustomerID = 008;
+
+UPDATE "ORDER LINE"
+SET Qty_Ordered  = 1
+WHERE CustomerID = 009;
+
+UPDATE "ORDER LINE"
+SET Qty_Ordered  = 2
+WHERE CustomerID = 010;
+
+
+
+
+
+SELECT FirstName ||' ' || LastName AS "Customer Name",
+ItemNumber AS "Item",
+Qty_Ordered AS "Quantity"
+FROM CUSTOMER INNER JOIN "ORDER LINE"
+ON CUSTOMER.CustomerID = "ORDER LINE".CustomerID
+ORDER BY Qty_Ordered DESC;
+
+
+
+SELECT FirstName ||' ' || LastName AS "Customer Name",
+ItemNumber AS "Item",
+Qty_Ordered AS "Quantity"
+FROM CUSTOMER INNER JOIN "ORDER LINE"
+ON CUSTOMER.CustomerID = "ORDER LINE".CustomerID
+WHERE Qty_Ordered > 2
+ORDER BY Qty_Ordered DESC;
+
+
+
+ALTER TABLE "ORDER LINE"
+	RENAME TO "ORDERS";
+
+
+
+
+
+
+
+
