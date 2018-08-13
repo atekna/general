@@ -1,0 +1,22 @@
+#u341
+{
+	border-style: none;
+	border-color: transparent;
+	background: transparent url("../images/dd_cropped_bw.jpg") no-repeat left top;
+	background-size: cover;
+}
+
+#u346,#u344
+{
+	border-style: none;
+	border-color: transparent;
+	background-color: #000000;
+}
+
+#u345-7
+{
+	display: block;
+	vertical-align: top;
+	position: fixed;
+}
+

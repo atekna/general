@@ -1,0 +1,67 @@
+<manifest alg="2" build="569" opt="true" iceEnabled="true" iceMarkupVersion="2" ftp_hostname="ftp://50.62.160.79" ftp_rootfolder="/httpdocs" exportTarget="FTP" resolutions="1x" timestamp="1414418281535">
+  <folder name="tablet">
+    <folder name="css">
+      <file name="index.css" crc="3964970448" ref="tablet>index"/>
+    </folder>
+    <file name="index.html" crc="351992566" mt="1414218838518" redirect="false"/>
+  </folder>
+  <folder name="phone">
+    <folder name="css">
+      <file name="index.css" crc="4222059002" ref="phone>index"/>
+      <file name="master_a-master.css" crc="4220784702" ref="phone>index:phone>about"/>
+      <file name="about.css" crc="200128960" ref="phone>about"/>
+    </folder>
+    <file name="index.html" crc="125794087" mt="1414384186262" redirect="true"/>
+    <file name="about.html" crc="490982139" mt="1414384186264" redirect="true"/>
+  </folder>
+  <folder name="css">
+    <file name="site_global.css" crc="365011649"/>
+    <file name="index.css" crc="52552896" ref="index"/>
+    <file name="about.css" crc="3855172983" ref="about"/>
+    <file name="master_home-master.css" crc="4057833628" ref="index"/>
+    <file name="master_about-master.css" crc="3773816282" ref="about"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="3769949617" ref="index:phone>index:tablet>index:about:phone>about"/>
+    <file name="museutils.js" crc="4050293121" ref="index:phone>index:tablet>index:about:phone>about"/>
+    <file name="jquery.watch.js" crc="3946357177" ref="index:phone>index:tablet>index:about:phone>about"/>
+    <file name="jquery.musepolyfill.bgsize.js" crc="84270510" ref="index:about:phone>index:phone>about"/>
+    <file name="jquery.scrolleffects.js" crc="398671634" ref="index:about"/>
+    <file name="webpro.js" crc="140723489" ref="about:phone>about"/>
+    <file name="form_check.php" crc="403614247" ref="about:phone>about"/>
+    <file name="form_throttle.php" crc="95597783" ref="about:phone>about"/>
+    <file name="form_process.php" crc="4006952737" ref="about:phone>about"/>
+    <file name="form-u273.php" crc="49874974" ref="about"/>
+    <file name="museredirect.js" crc="490478987" ref="index:about"/>
+    <file name="form-u379.php" crc="3862896330" ref="phone>about"/>
+  </folder>
+  <folder name="images">
+    <file name="knight_animation_1000.gif" crc="356953074" ref="index:phone>index"/>
+    <file name="dd_cropped_bw.jpg" crc="4280862170" ref="index:about:phone>index"/>
+    <file name="logo_button-1-u202-fr.png" crc="486911248" ref="index"/>
+    <file name="logo_button-1-u202-r-fr.png" crc="3983096664" ref="index"/>
+    <file name="logo_button-1-u202-m-fr.png" crc="4067677121" ref="index"/>
+    <file name="spider_level_black-2.jpg" crc="433059597" ref="about:phone>about"/>
+    <file name="u280-17.png" crc="3886460199" ref="about"/>
+    <file name="u280-17-r.png" crc="65015724" ref="about"/>
+    <file name="u280-17-m.png" crc="396364503" ref="about"/>
+    <file name="u280-17-fs.png" crc="484356462" ref="about"/>
+    <file name="u345-7.png" crc="4228972228" ref="index"/>
+    <file name="u361-8.png" crc="3844077440" ref="phone>index:phone>about"/>
+    <file name="logo_button-1-u372-fr.png" crc="3886197963" ref="phone>index:phone>about"/>
+    <file name="logo_button-1-u372-r-fr.png" crc="4037968274" ref="phone>index:phone>about"/>
+    <file name="logo_button-1-u372-m-fr.png" crc="426184583" ref="phone>index:phone>about"/>
+    <file name="u390-17.png" crc="3886460199" ref="phone>about"/>
+    <file name="u390-17-r.png" crc="65015724" ref="phone>about"/>
+    <file name="u390-17-m.png" crc="396364503" ref="phone>about"/>
+    <file name="u390-17-fs.png" crc="484356462" ref="phone>about"/>
+    <file name="u377-11.png" crc="3931355221" ref="phone>about"/>
+    <file name="u256-28.png" crc="65621204" ref="about"/>
+    <file name="u414-7.png" crc="4268227328" ref="about"/>
+    <file name="logo_button-1-u420-fr.png" crc="486911248" ref="about"/>
+    <file name="logo_button-1-u420-r-fr.png" crc="3983096664" ref="about"/>
+    <file name="logo_button-1-u420-m-fr.png" crc="4067677121" ref="about"/>
+  </folder>
+  <file name="index.html" crc="4261673090" mt="1414417954062" redirect="true"/>
+  <file name="about.html" crc="14768194" mt="1414418248650" redirect="true"/>
+</manifest>

@@ -1,0 +1,120 @@
+.version.index /* version checker */
+{
+	color: #000003;
+	background-color: #21E4C0;
+}
+
+.html
+{
+	background-color: #FFFFFF;
+}
+
+#page
+{
+	z-index: 1;
+	width: 960px;
+	min-height: 649px;
+	background-image: none;
+	border-style: none;
+	border-color: #000000;
+	background-color: transparent;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#page_position_content
+{
+	margin-top: -36px;
+	margin-bottom: -2px;
+}
+
+#u341,#u341-bw
+{
+	z-index: 2;
+	height: 252px;
+}
+
+#u346,#u346-bw
+{
+	z-index: 3;
+	height: 4px;
+}
+
+#u82
+{
+	z-index: 12;
+	width: 920px;
+	height: 515px;
+	border-style: none;
+	border-color: transparent;
+	margin-left: 20px;
+	position: relative;
+	background: #FFFFFF url("../images/knight_animation_1000.gif") no-repeat left top;
+	background-size: cover;
+}
+
+#pu344
+{
+	width: 0.01px;
+	margin-left: -100px;
+	margin-top: -17px;
+}
+
+#u344
+{
+	z-index: 4;
+	height: 277px;
+}
+
+#u344-bw
+{
+	z-index: 4;
+	margin-top: 17px;
+	height: 277px;
+}
+
+#u202
+{
+	z-index: 13;
+	width: 580px;
+	height: 296px;
+	position: relative;
+	margin-right: -10000px;
+	left: 549px;
+	background: transparent url("../images/logo_button-1-u202-fr.png") no-repeat left top;
+	background-size: contain;
+}
+
+#u202:hover
+{
+	margin: 0px -10000px 0px 0px;
+	background: transparent url("../images/logo_button-1-u202-r-fr.png") no-repeat left top;
+	background-size: contain;
+}
+
+#u202:active
+{
+	margin: 0px -10000px 0px 0px;
+	background: transparent url("../images/logo_button-1-u202-m-fr.png") no-repeat left top;
+	background-size: contain;
+}
+
+#u345-7
+{
+	z-index: 5;
+	top: 834px;
+	left: 20px;
+}
+
+body
+{
+	position: relative;
+	min-width: 960px;
+	padding-top: 36px;
+}
+
+#page .verticalspacer
+{
+	clear: both;
+}
+

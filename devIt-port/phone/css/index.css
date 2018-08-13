@@ -1,0 +1,139 @@
+.version.index /* version checker */
+{
+	color: #0000FB;
+	background-color: #A781FA;
+}
+
+@-ms-viewport
+{
+	width: 380px;
+}
+
+@-webkit-viewport
+{
+	width: 380px;
+}
+
+@-o-viewport
+{
+	width: 380px;
+}
+
+@-moz-viewport
+{
+	width: 380px;
+}
+
+@viewport
+{
+	width: 380px;
+}
+
+.html
+{
+	background-color: #FFFFFF;
+}
+
+#page
+{
+	z-index: 1;
+	width: 380px;
+	min-height: 534.9999999999986px;
+	background-image: none;
+	border-style: none;
+	border-color: #000000;
+	background-color: transparent;
+	padding-bottom: 0px;
+}
+
+#u356,#u356-bw
+{
+	z-index: 2;
+	height: 91px;
+}
+
+#u357,#u357-bw
+{
+	z-index: 3;
+	height: 4px;
+}
+
+#u373
+{
+	z-index: 14;
+	height: 214px;
+	border-style: none;
+	border-color: transparent;
+	background: #FFFFFF url("../../images/knight_animation_1000.gif") no-repeat left top;
+	background-size: cover;
+}
+
+#u373-bw
+{
+	z-index: 14;
+	height: 214px;
+}
+
+#pu358
+{
+	width: 0.01px;
+}
+
+#u358
+{
+	z-index: 4;
+	padding-bottom: 140px;
+}
+
+#u361-8
+{
+	z-index: 5;
+	margin-right: -10000px;
+	margin-top: 16px;
+	left: 15px;
+}
+
+#u358-bw
+{
+	z-index: 4;
+	height: 89px;
+}
+
+#u372
+{
+	z-index: 13;
+	width: 344px;
+	height: 174px;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 55px;
+	left: 36px;
+	background: transparent url("../../images/logo_button-1-u372-fr.png") no-repeat left top;
+	background-size: contain;
+}
+
+#u372:hover
+{
+	margin: 55px -10000px 0px 0px;
+	background: transparent url("../../images/logo_button-1-u372-r-fr.png") no-repeat left top;
+	background-size: contain;
+}
+
+#u372:active
+{
+	margin: 55px -10000px 0px 0px;
+	background: transparent url("../../images/logo_button-1-u372-m-fr.png") no-repeat left top;
+	background-size: contain;
+}
+
+body
+{
+	position: relative;
+	min-width: 380px;
+}
+
+#page .verticalspacer
+{
+	clear: both;
+}
+
