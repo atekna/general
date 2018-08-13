@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>Whack-A-Mole (CSCI2447)</title>
+    
+    <!-- CSS styles: This is for me to worry about; not you. -->
+	<link href="css/game.css" rel="stylesheet" />
+	<script src="jquery-3.3.1.min.js"></script>
+	<script>
+	
+
+		var userScore = 0;
+		var startingTime = 30;
+		var gameover = false;
+		var moleCount =0;
+
+		$(document).ready( function() {
+		
+		
+			$('#start_button').click(function() {
+				//dynamic style
+				$("h1").css("color", "purple");
+				$("#gamespace").css("background-color", "#0f1e2d");
+				
+				//hide button
+				$(this).hide();
+				
+				//onAwake
+				StartGame();
+				
+				
+				//countdown timer
+				setInterval(function(){
+					startingTime--;
+						if(startingTime>=0){
+							span = document.getElementById("timer");
+							span.innerHTML = startingTime;
+						}
+						if(startingTime=== 0) {
+							clearInterval(startingTime);
+							clearTimeout (t);
+							gameover = true;
+							alert ("Congratulations. You scored " +userScore+ " point(s). Please Refresh the browser to try again!");
+							//$('#start_button').show();
+							location.reload();
+						}
+						
+					},1000);
+
+				});
+
+			$('#gamespace').on('click',"img",function(){
+				IncScore();
+				if (gameover === false){
+				$(this).remove();
+				}
+			
+			});	
+		});
+		
+		
+
+
+		
+		
+		
+		//MATH FUNCTIONS
+		function GenerateY(min,max){
+			var y = Math.floor(Math.random() * 280) + 1 
+			return y;
+		};
+
+		function GenerateX(min,max){
+			var x = Math.floor(Math.random() * 500) + 1 
+			return x;
+		};
+		
+		function RandomHide(){
+			return Math.floor(Math.random() * 3000);
+		};
+		
+		
+		
+		//OTHER FUNCTIONS
+		
+		//OnStart	
+		function StartGame(){
+			$("#timer").fadeIn(100); //shows timer on load
+			AddMole();
+		}
+		
+		
+		//Increment Score
+		function IncScore(){
+			if(gameover === false){
+			userScore+=1;
+			$("#score").html(userScore+" points");
+			}
+			else {
+			}
+		};
+		
+
+		//Add the Mole
+		var r = Math.floor(Math.random()*2000);
+		function AddMole(){
+			var xMole = GenerateX();
+			var yMole = GenerateY();
+			if (gameover === false){
+				$("#gamespace").append('<img id = "molepic' + moleCount+'" src="img/mole.png" style="position:absolute; top:'+yMole+'px; left:'+xMole+'px;" /> ');
+				var iden = "#molepic"+moleCount;
+				$("body").find(iden).delay(RandomHide()).fadeOut();
+				moleCount++;
+				t = setTimeout("AddMole();", r);
+			}
+			else{
+				return;
+			}
+		};
+		
+		
+		
+	</script>
+	
+	
+	
+	
+  </head>
+  <body>
+
+	<div id="content">
+
+		<h1>Collect-A-Bag</h1>
+		
+		<p>After clicking "start", you will have 30 seconds to collect as 
+		many plastic bags as as you can. The bags will disappear quickly, so be ready! </p>
+		
+		<div id="controls">
+			<span id="score">0 pts</span>
+			<button type="button" id="start_button">Start!</button>
+		</div>
+		
+		<div id="timer">30 seconds left</div>
+		
+		<div id="gamespace">
+
+			
+		</div>
+		
+	</div>
+  </body>
+</html>
